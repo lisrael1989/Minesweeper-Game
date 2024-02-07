@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build Minesweeper -Sprint01</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body onload="onInit()">
+    <h1>Minesweeper Game</h1>
+
+    <div class="timer">
+      Time:<span class="minutes">00</span>:<span class="seconds">00</span>
+    </div>
+
+    <p class="levels">
+      <button onclick="onChangeLevel(4,2)">Beginner</button>
+      <button onclick="onChangeLevel(8,14)">Medium</button>
+      <button onclick="onChangeLevel(12,32)">Expert</button>
+    </p>
+
+    <table>
+      <tbody class="board"></tbody>
+    </table>
+
+    <div class="modal">
+      <h3></h3>
+      <button onclick="onInit()">Play again</button>
+    </div>
+
+    <div>
+      <button class="restart-on-game" onclick="onInit()">Restart</button>
+    </div>
+
+    <footer>
+      <h5>©️Made by Israel Litvak</h5>
+    </footer>
+    <script src="js/utils.js"></script>
+    <script src="js/Minesweeper.js"></script>
+  </body>
+</html>
