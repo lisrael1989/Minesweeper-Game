@@ -69,12 +69,14 @@ table {
 }
 
 .restart-on-game {
-  background-color: rgb(143, 83, 160);
+  background-color: white;
   color: white;
   margin-top: 10px;
   font-size: 20px;
   border-radius: 10px;
   margin-bottom: 100px;
+  height: 50px;
+  width: 50px;
 }
 
 .modal {
@@ -135,7 +137,7 @@ img :hover {
   font-size: 20px;
 }
 
-.d1 {
+.face {
   background-color: var(--light);
   width: fit-content;
   margin: auto 1vw;

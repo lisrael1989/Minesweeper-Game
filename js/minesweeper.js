@@ -49,7 +49,7 @@ function buildBoard() {
       };
     }
   }
-  board[1][1].isMine = board[2][3].isMine = true;
+  board[1][1].isMine = board[2][3].isMine = false;
   return board;
 }
 
@@ -189,7 +189,7 @@ function expandShown(rowIdx, colIdx) {
 
 function checkVictory() {
   if (gGame.shownCount === gLevel.size ** 2 - gLevel.mines) {
-    endGame("You Won!");
+    endGame("You Won! 🥇");
   }
 }
 
@@ -202,6 +202,8 @@ function endGame(msg) {
   const elModalH3 = document.querySelector(".modal h3");
   elModalH3.innerText = msg;
   showModal();
+  const elLoseFace = document.querySelector(".restart-on-game");
+  elLoseFace.innerText = " 😤";
   gGame.isOn = false;
 }
 
