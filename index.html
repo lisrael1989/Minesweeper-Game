@@ -9,8 +9,12 @@
   <body onload="onInit()">
     <h1>Minesweeper Game</h1>
 
-    <div class="timer">
-      Time:<span class="minutes">00</span>:<span class="seconds">00</span>
+    <div class="top">
+      <div class="timer">
+        ⏳<span class="minutes">00</span>:<span class="seconds">00</span>
+      </div>
+      <div class="d1">🙂</div>
+      <div class="lives">❤️<span class="live">3</span></div>
     </div>
 
     <p class="levels">
@@ -31,9 +35,17 @@
     <div>
       <button class="restart-on-game" onclick="onInit()">Restart</button>
     </div>
-
     <footer>
-      <h5>©️Made by Israel Litvak</h5>
+      <div class="footerContainer">
+        <div class="social">
+          <a href="https://github.com/lisrael1989/Minesweeper-Game"
+            ><i><img src="img/github.png" alt="git" /></i
+          ></a>
+        </div>
+        <div class="copyrights">
+          <p>©️Made by Israel Litvak</p>
+        </div>
+      </div>
     </footer>
 
     <script src="js/utils.js"></script>
