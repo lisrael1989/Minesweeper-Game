@@ -32,7 +32,8 @@ function onInit() {
   renderBoard();
   gLives = 3;
   document.querySelector(".live").innerText = gLives;
-
+  const elRestartButton = document.querySelector(".restart-on-game");
+  elRestartButton.innerText = "😊";
   // console.table(gBoard);
 }
 
@@ -94,6 +95,16 @@ function setMinesLocations() {
   for (let i = 0; i < gLevel.mines; i++) {
     const randCell = getRandCell();
     gBoard[randCell.i][randCell.j].isMine = true;
+  }
+}
+
+function revealMines() {
+  for (let i = 0; i < gBoard.length; i++) {
+    for (let j = 0; j < gBoard[0].length; j++) {
+      if (gBoard[i][j].isMine) {
+        renderCell({ i, j }, MINE);
+      }
+    }
   }
 }
 
@@ -190,11 +201,14 @@ function expandShown(rowIdx, colIdx) {
 function checkVictory() {
   if (gGame.shownCount === gLevel.size ** 2 - gLevel.mines) {
     endGame("You Won! 🥇");
+    const elwinFace = document.querySelector(".restart-on-game");
+    elwinFace.innerText = " 😎";
   }
 }
 
 function gameOver() {
   endGame("Game Over!");
+  revealMines();
 }
 
 function endGame(msg) {
@@ -242,8 +256,3 @@ function getMinutes(timeDiff) {
   const minutes = new Date(timeDiff).getMinutes();
   return (minutes + "").padStart(2, "0");
 }
-
-// function handleMineClick() {
-//   gLives--;
-//   document.querySelector("span.lives").innerText = gLives;
-// }

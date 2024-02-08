@@ -10,11 +10,12 @@
     <h1>Minesweeper Game</h1>
 
     <div class="top">
-      <div class="timer">
+      <button class="restart-on-game" onclick="onInit()">😊</button>
+      <button class="timer">
         ⏳<span class="minutes">00</span>:<span class="seconds">00</span>
-      </div>
-      <!-- <button onclick="onInit()">😊</button> -->
-      <div class="lives">❤️<span class="live">3</span></div>
+      </button>
+
+      <button class="lives">❤️<span class="live">3</span></button>
     </div>
 
     <p class="levels">
@@ -32,21 +33,7 @@
       <button onclick="onInit()">Play again</button>
     </div>
 
-    <div>
-      <button class="restart-on-game" onclick="onInit()">😊</button>
-    </div>
-    <footer>
-      <div class="footerContainer">
-        <div class="social">
-          <a href="https://github.com/lisrael1989/Minesweeper-Game"
-            ><i><img src="img/github.png" alt="git" /></i
-          ></a>
-        </div>
-        <div class="copyrights">
-          <p>©️Made by Israel Litvak</p>
-        </div>
-      </div>
-    </footer>
+    <footer>©️Made by Israel Litvak</footer>
 
     <script src="js/utils.js"></script>
     <script src="js/minesweeper.js"></script>

@@ -2,6 +2,11 @@ body {
   background-color: rgb(20, 51, 120);
   color: white;
   text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://cdnb.artstation.com/p/assets/images/images/033/752/895/large/sibylle-hell-litegames-minesweeperworld-defaultbg.jpg?1610477693");
 }
 
 h1 {
@@ -29,11 +34,31 @@ h1 {
   display: inline-block;
   border-radius: 5px;
   color: black;
-  height: 40px;
-  width: 60px;
+  padding: 6px 6px;
+  height: auto;
+  margin-top: 1px;
   cursor: pointer;
-  height: 35px;
-  padding-bottom: 0px;
+}
+
+.restart-on-game {
+  text-align: center;
+  font-size: 20px;
+  background-color: white;
+  display: inline-block;
+  border-radius: 5px;
+  color: black;
+  padding: 6px 6px;
+  height: auto;
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+.levels button {
+  background-color: rgb(143, 83, 160);
+  color: white;
+  width: 120px;
+  height: 60px;
+  border: none;
 }
 
 table {
@@ -42,6 +67,9 @@ table {
   text-align: center;
   margin: auto;
   cursor: pointer;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  border: solid 5px;
 }
 
 .cell {
@@ -60,25 +88,6 @@ table {
   display: none;
 }
 
-.levels button {
-  background-color: rgb(143, 83, 160);
-  color: rgb(211, 232, 251);
-  width: 120px;
-  height: 60px;
-  border: none;
-}
-
-.restart-on-game {
-  background-color: white;
-  color: white;
-  margin-top: 10px;
-  font-size: 20px;
-  border-radius: 10px;
-  margin-bottom: 100px;
-  height: 50px;
-  width: 50px;
-}
-
 .modal {
   background-color: rgb(227, 172, 76, 0.9);
   color: black;
@@ -91,61 +100,13 @@ table {
 }
 
 footer {
-  background-color: white;
-}
-
-.footerContainer {
-  width: 100%;
-  padding: 10px 10px 10px;
-  height: 1rem;
-  position: relative;
-  min-height: 20vh;
-}
-
-.social {
-  display: flex;
-  justify-content: center;
-}
-
-.social a {
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 50%;
-}
-
-.social a i {
-  font-size: 2em;
-  color: black;
-  opacity: 0.9;
-}
-
-img {
-  height: 60px;
-  background-color: white;
-  margin-bottom: 15px;
-  margin-top: 20px;
-}
-
-img :hover {
-  background-color: black;
-  transition: 0.5s;
-}
-
-.copyrights {
+  background-color: rgb(143, 83, 160);
+  width: 300px;
   color: white;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.face {
-  background-color: var(--light);
-  width: fit-content;
-  margin: auto 1vw;
-  font-size: 2rem;
-  color: var(--secondary);
-  border-radius: 1vh;
-  padding: 0.55rem;
-  user-select: none;
+  font-size: 18px;
+  padding: 10px 10px;
+  height: 30px;
   display: inline-block;
-  background-color: white;
+  border-radius: 2px;
+  font-weight: bolder;
 }
