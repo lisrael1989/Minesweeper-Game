@@ -13,6 +13,7 @@ var gLevel = {
 };
 var gTimerInterval;
 var gLives;
+var gHintsAvalable = 3;
 
 function onInit() {
   clearInterval(gTimerInterval);
