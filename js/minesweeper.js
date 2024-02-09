@@ -14,6 +14,7 @@ var gLevel = {
 var gTimerInterval;
 var gLives;
 var gHintsAvalable = 3;
+var gIsDark;
 
 function onInit() {
   clearInterval(gTimerInterval);
@@ -35,7 +36,6 @@ function onInit() {
   document.querySelector(".live").innerText = gLives;
   const elRestartButton = document.querySelector(".restart-on-game");
   elRestartButton.innerText = "😊";
-  // console.table(gBoard);
 }
 
 function buildBoard() {
@@ -261,4 +261,17 @@ function getSeconds(timeDiff) {
 function getMinutes(timeDiff) {
   const minutes = new Date(timeDiff).getMinutes();
   return (minutes + "").padStart(2, "0");
+}
+
+function darkMode() {
+  var elBtn = document.querySelector(".btn-toggle");
+  var body = document.body;
+
+  body.classList.toggle("dark-mode");
+
+  if (body.classList.contains("dark-mode")) {
+    elBtn.innerText = "White Mode";
+  } else {
+    elBtn.innerText = "Dark Mode";
+  }
 }
