@@ -14,32 +14,8 @@ h1 {
   font-size: 50px;
 }
 
-.timer {
-  text-align: center;
-  font-size: 20px;
-  background-color: white;
-  display: inline-block;
-  border-radius: 5px;
-  color: black;
-  padding: 6px 6px;
-  height: auto;
-  margin-top: 1px;
-  cursor: pointer;
-}
-
-.lives {
-  text-align: center;
-  font-size: 20px;
-  background-color: white;
-  display: inline-block;
-  border-radius: 5px;
-  color: black;
-  padding: 6px 6px;
-  height: auto;
-  margin-top: 1px;
-  cursor: pointer;
-}
-
+.timer,
+.lives,
 .restart-on-game {
   text-align: center;
   font-size: 20px;

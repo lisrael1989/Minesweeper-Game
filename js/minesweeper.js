@@ -70,6 +70,15 @@ function renderBoard() {
   elBoard.innerHTML = strHTML;
 }
 
+function renderCell(location, value) {
+  const elCell = document.querySelector(`.cell-${location.i}-${location.j}`);
+  if (value === MINE || value === FLAG || value === EMPTY) {
+    elCell.innerHTML = value;
+  } else {
+    elCell.innerHTML = NUM_ICONS[value];
+  }
+}
+
 function setMinesNegsCount() {
   for (let i = 0; i < gBoard.length; i++) {
     for (let j = 0; j < gBoard[0].length; j++) {
@@ -80,15 +89,18 @@ function setMinesNegsCount() {
 
 function countNegsMines(rowIdx, colIdx) {
   var negsCount = 0;
-  const rowLimit = Math.min(rowIdx + 1, gBoard.length);
-  const colLimit = Math.min(colIdx + 1, gBoard[0].length);
+  const rowStart = Math.max(rowIdx - 1, 0);
+  const rowEnd = Math.min(rowIdx + 1, gBoard.length - 1);
+  const colStart = Math.max(colIdx - 1, 0);
+  const colEnd = Math.min(colIdx + 1, gBoard[0].length - 1);
 
-  for (let i = Math.max(rowIdx - 1, 0); i < rowLimit; i++) {
-    for (let j = Math.max(colIdx - 1, 0); j < colLimit; j++) {
+  for (let i = rowStart; i <= rowEnd; i++) {
+    for (let j = colStart; j <= colEnd; j++) {
       if (i === rowIdx && j === colIdx) continue;
       if (gBoard[i][j].isMine) negsCount++;
     }
   }
+
   return negsCount;
 }
 
@@ -209,6 +221,8 @@ function checkVictory() {
 
 function gameOver() {
   endGame("Game Over!");
+  // const elRedCell = document.querySelector(".restart-on-game");
+  // elRedCell.innerText = " 😎";
   revealMines();
 }
 
@@ -226,15 +240,6 @@ function onChangeLevel(size, mines) {
   gLevel.size = size;
   gLevel.mines = mines;
   onInit();
-}
-
-function renderCell(location, value) {
-  const elCell = document.querySelector(`.cell-${location.i}-${location.j}`);
-  if (value === MINE || value === FLAG || value === EMPTY) {
-    elCell.innerHTML = value;
-  } else {
-    elCell.innerHTML = NUM_ICONS[value];
-  }
 }
 
 function startTimer(startTime) {
